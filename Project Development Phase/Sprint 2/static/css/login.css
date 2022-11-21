@@ -6,8 +6,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-	overflow: hidden;
-
+    overflow: hidden;
 }
 
 .wave{
@@ -104,7 +103,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #A594F9;
+	background-color: #38d39f;
 	transition: .4s;
 }
 
@@ -149,6 +148,7 @@ form{
 }
 
 a{
+	display: block;
 	text-align: right;
 	text-decoration: none;
 	color: #999;
@@ -157,7 +157,7 @@ a{
 }
 
 a:hover{
-	color: #A594F9;
+	color: #38d39f;
 }
 
 .btn{
@@ -167,7 +167,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #A594F9, #A594F9, #A594F9);
+	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
@@ -296,16 +296,14 @@ ul {
   }
   .app{
 	  position: relative;
-	  top: -50px;
+	  top: -70px;
 	  height: 5%;
-	  right:10%;
 
 
   }
   #app1{
 	  font-style: oblique;
-	  color:#A594F9 ;
-	  
+	  color:blue ;
   }
   #png{
 	  position: relative;

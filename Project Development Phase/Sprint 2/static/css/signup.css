@@ -1,35 +1,33 @@
 @charset "utf-8";
 /* CSS Document */
 body{
+ background-color:#eef1f8;
  margin:0px;
  padding:0px;
 }
-
 a{
  text-decoration:none;
 }
 .container{
+ width:100%;
+ height:100%;
+ background-color:#FFFFFF;
+ position: absolute;
+ left:50%;
+ top:49%;
+ transform:translate(-50%,-50%);
+ box-shadow:2px 2px 30px rgba(66,57,238,0.2);
+ border-radius:20px;
  display:flex;
  justify-content: center;
  align-items:center;
- 
- height: 90%;
- background-color: #ffffff;
- position: absolute;
- left: 50%;
- right: 66%;
- bottom: 0%;
- top:50%;
- transform:translate(-50%,-50%);
- box-shadow:2px 2px 30px rgba(21, 8, 255, 0.2);
- border-radius:20px;
-
+ background-image: url('../images/bg.gif');
  background-repeat:no-repeat;
  background-size:cover;
 }
 .sign-up{
-    position: relative;
-    left: -250px;
+	position: relative;
+	left: -250px;
  width:50%;
  display:flex;
  flex-direction:column;
@@ -75,23 +73,22 @@ left:80px ;
 }
 .text img{
  margin-left:20px; 
-
 }
 .conditions{
  font-family:myriad pro;
- color:#000000;
+ color:#bbc1cb;
  font-size:14px;
 }
 .trems{
     top:20px ;
     position: relative;
-    left:37px ;
+	left:37px ;
 
  display: flex;
  align-items:center; 
 }
 .conditions a{
- color:#A594F9;
+ color:#7d22e3;
  font-weight:500;
 }
 button{
@@ -100,7 +97,7 @@ button{
  outline:none;
  border:none;
  border-radius:20px;
- background:linear-gradient(-30deg,#A594F9,#A594F9 60%);
+ background:linear-gradient(-30deg,#3b02ed,#8e2ae0 55%);
  box-shadow:2px 6px 16px rgba(66,57,238,0.3);
  color:#FFFFFF;
  font-weight:600;
@@ -119,77 +116,77 @@ button:active{
  line-height:0px;
 }
 ul {
-    position:relative;
-    top:40px;
-    left:25%;
-    right:100px;
-    transform: translate(-50%, -50%);
-    margin: 75px;
-    padding:0;
-    display:flex;
-    flex:auto;
+	position:relative;
+	top:40px;
+	left:25%;
+	right:100px;
+	transform: translate(-50%, -50%);
+	margin: 75px;
+	padding:0;
+	display:flex;
+	flex:auto;
   }
   
   ul li {
-    list-style: none;
+	list-style: none;
   }
   
   ul li a {
-    position: relative;
-    width:60px;
-    height:60px;
-    display:block;
-    text-align:center;
-    margin:0 10px;
-    border-radius: 50%;
-    padding: 6px;
-    box-sizing: border-box;
-    text-decoration:none;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-    background: linear-gradient(0deg, #ddd, #fff);
-    transition: .5s;
+	position: relative;
+	width:60px;
+	height:60px;
+	display:block;
+	text-align:center;
+	margin:0 10px;
+	border-radius: 50%;
+	padding: 6px;
+	box-sizing: border-box;
+	text-decoration:none;
+	box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+	background: linear-gradient(0deg, #ddd, #fff);
+	transition: .5s;
   }
   
   ul li a:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    text-decoration:none;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	text-decoration:none;
   }
   
   ul li a .fab {
-    width: 100%;
-    height:100%;
-    display:block;
-    background: linear-gradient(0deg, #fff, #ddd);
-    border-radius: 50%;
-    line-height: calc(60px - 12px);
-    font-size:24px;
-    color: #262626;
-    transition: .5s;
+	width: 100%;
+	height:100%;
+	display:block;
+	background: linear-gradient(0deg, #fff, #ddd);
+	border-radius: 50%;
+	line-height: calc(60px - 12px);
+	font-size:24px;
+	color: #262626;
+	transition: .5s;
   }
   
   ul li:nth-child(1) a:hover .fab {
-    color: #3b5998;
+	color: #3b5998;
   }
   
   ul li:nth-child(2) a:hover .fab {
-    color: #00aced;
+	color: #00aced;
   }
   
   ul li:nth-child(3) a:hover .fab {
-    color: #dd4b39;
+	color: #dd4b39;
   }
   
   ul li:nth-child(4) a:hover .fab {
-    color: #007bb6;
+	color: #007bb6;
   }
   
   ul li:nth-child(5) a:hover .fab {
-    color: #e4405f;
+	color: #e4405f;
   }
   .toop{
       position: relative;
       top: 20px;
-      left: 75px;
+	  left: 75px;
   }
   .check{
       position: relative;
@@ -199,37 +196,37 @@ ul {
   .para{
       position: relative;
       top: 0px;
-      left: -45px;
+	  left: -45px;
 
   }
   .diag{
-      position: relative;
-      top:0px;
-      margin: 0px;
-      padding: 0px;
-      left:-10px;
+	  position: relative;
+	  
+	  top:0px;
+	  margin: 0px;
+	  padding: 0px;
+	  left:-10px;
   }
   .fig1{
-      position: relative;
-      size:100%;
+	  position: relative;
+	  size:200%;
   }
   #png{
-      position: relative;
-      left: -270px;
-      top: -45px;
+	  position: relative;
+	  left: -270px;
+	  top: -45px;
 
   }
   .or{
-      position: relative;
-      left:180px;
+	  position: relative;
+	  left:180px;
   }
   .s1{
-      position: relative;
-      left: 140px;
+	  position: relative;
+	  left: 140px;
   }
   .t{
-      position: relative;
-      left:-100px ;
-      top:10px;
+	  position: relative;
+	  left:-100px ;
+	  top:10px;
   }
-
