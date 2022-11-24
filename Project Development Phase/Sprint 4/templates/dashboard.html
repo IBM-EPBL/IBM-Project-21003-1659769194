@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>The Wallet</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.dashboard.css') }}">
+	</head>
+	<body onload="main()">
+		<!-- partial:index.partial.html -->
+		<div class="app">
+			<header class="app-header">
+				<div class="app-header-logo">
+					<div class="logo">
+						<span class="logo-icon">
+							<img src="https://assets.codepen.io/285131/almeria-logo.svg" />
+						</span>
+						<h1 class="logo-title">
+							<span>The Wallet</span>
+							<span>Expense Tracker</span>
+						</h1>
+					</div>
+				</div>
+				<div class="app-header-navigation">
+					<div class="tabs">
+						<marquee direction="right"><h1>If you are saving, you are succeeding...</h1></marquee>
+					</div>
+				</div>
+				<div class="app-header-actions">
+					<button class="user-profile">
+						<span id="user_name">Loading...</span>
+						<span>
+							<img src="{{ url_for('static', filename='images/profile.webp') }}" />
+						</span>
+					</button>
+					<div class="app-header-actions-buttons">
+						<button class="icon-button large" onclick="logout()">
+							<i class="ph-sign-out"></i>
+						</button>
+					</div>
+				</div>
+				<div class="app-header-mobile">
+					<button class="icon-button large">
+						<i class="ph-list"></i>
+					</button>
+				</div>
+			</header>
+			<div class="app-body">
+				<div class="app-body-navigation">
+					<nav class="navigation">
+						<a href="/graph">
+							<i class="ph-browsers"></i>
+							<span>Dashboard</span>
+						</a>
+						<a href="/dashboard">
+							<i class="ph-check-square"></i>
+							<span>Expenses</span>
+						</a>
+					</nav>
+					<footer class="footer">
+						<h1>The Wallet<small>©</small></h1>
+					</footer>
+				</div>
+				<div class="app-body-main-content">
+					<section class="service-section">
+						<h2>Expenses</h2>
+						<!-- <div class="service-section-header">
+							<div class="search-field">
+								<i class="ph-magnifying-glass"></i>
+								<input type="text" placeholder="Account number">
+							</div> -->
+							<!-- For Joint account drop down based on account number -->
+							<!-- <div class="dropdown-field">
+								<i class="ph-caret-down"></i>
+							</div>
+							<button class="flat-button">
+								Search
+							</button>
+						</div>
+						<div class="mobile-only">
+							<button class="flat-button">
+								Toggle search
+							</button>
+						</div> -->
+						<div class="tiles">
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/cutlery.jpg') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span><b> Food </b></span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/entertainment.jpg') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span>Entertainment</span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/shopping.png') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span>Shopping</span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/EMI.jpg') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span>EMI</span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/house.jpeg') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span>Rent</span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+							<article class="tile">
+								<div class="tile-header">
+									<span>
+										<img src="{{ url_for('static', filename='images/misc.jpg') }}" style="height: 65px;"/>
+									</span>
+									<h3>
+										<span>Others</span>
+									</h3>
+								</div>
+								<a href="#divOne">
+									<span>Add expenses</span>
+									<span class="icon-button">
+										<i class="ph-caret-right-bold"></i>
+									</span>
+								</a>
+							</article>
+						</div>
+					</section>
+					<section class="transfer-section">
+						<div class="transfer-section-header">
+							<h2>Recent Expenses</h2>
+							<div class="filter-options">
+								<p>Filter </p>
+								<button class="icon-button" onclick="reverseTransactions()">
+									<i class="ph-funnel"></i>
+								</button>
+							</div>
+						</div>
+						<div class="transfers">
+						</div>
+					</section>
+				</div>
+				<div class="app-body-sidebar">
+					<section class="payment-section">
+						<h2>Digital Wallet</h2>
+						<div class="payment-section-header">
+							<p>Saving, Investing and Tracking</p>
+						</div>
+						<div class="payments">
+							<div class="payment">
+								<div class="card green">
+									<span>&nbsp;</span>
+									<span>
+										<img src="{{ url_for('static', filename='images/wallet2.png') }}" style="height: 60px;"/>
+									</span>
+									<span>
+										Balance
+									</span>
+								</div>
+								<div class="payment-details">
+									<span style="display: flex;justify-content: space-between;">
+										<h3>Wallet Balance</h3>
+										<button onclick="openBalPopup()" id="myBtn">Add to Wallet</button>
+									</span>
+									<div>
+										<span id="balance">Loading...</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="faq">
+								<h1>Frequently Asked Questions</h1>
+								<div>
+									<label>Do you lay a strong foundation for long-term earnings and wealth?</label>
+									<span style="color:#D1C1C1" align="justify">Take every learning during college as your investment for the future. Missing out on even one of those can seriously fritter away that investment.</span>
+								</div>
+								<div>
+									<label>What financial mistakes should one refrain from?</label>
+									<span style="color:#D1C1C1" align="justify">Ensure that your under graduation loan amount should not be more than your first year salary. Another mistake to avoid is playing with credit card.</span>
+								</div>
+								<div>
+									<label>How to manage debt and boost your credit score?</label>
+									<span style="color:#D1C1C1" align="justify">Do not be influenced by your peers, but stick to maintaining your own budget. Take up any campus employment to balance your expenditures and make a saving, along with offering and gaining valued experience.	</span>							
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="delParent(event)">&times;</span>
+					<form onsubmit="updateBalance(event)" style="color:black">
+						<h1 style="font-weight: bolder; font-size: x-large;"><center>Modify Wallet Balance</center></h1>
+						<br/>
+						<div style="margin-left:185px; margin-top: 2px;">
+							<label for="amount" style="font-size: large;"><b>Amount : </b></label>
+							<input type="number" style="margin-left:1px" placeholder="Enter Amount" name="amount" required />
+							<button type="submit" class="btn">Add</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="overlay" id="divOne">
+				<div class="wrapper">
+					<h2>Please Fill up The Expenses Form</h2><a class="close" href="#">&times;</a>
+					<div class="content">
+						<div class="container">
+							<form onsubmit="addExpense(event)">
+								<label>Expense Category</label>
+								<select name="category">
+									<option value="food">Food</option>
+									<option value="entertainment">Entertainment</option>
+									<option value="shopping">Shopping</option>
+									<option value="emi">EMI</option>
+									<option value="rent">Rent</option>
+									<option value="others">Others</option>
+								</select>
+								<label>Date</label><br/>
+								<input class="popup" placeholder="Date.." type="date" required name="date">
+								<label>Location</label> 
+								<input placeholder="Place of Purchase..." type="text" class="popup">
+								<label>Amount</label> <br/>
+								<input class="popup" type="number" placeholder="Enter Amount..." name="amount" required />
+								<input class="popup" type="submit" value="Add Expense">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- partial -->
+			<script src='https://unpkg.com/phosphor-icons'></script>
+			<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+			<script type="text/babel" src="{{ url_for('static', filename='/js/script.dashboard.js') }}"></script>
+			<script>
+				window.watsonAssistantChatOptions = {
+				  integrationID: "8f7293cb-e55e-49e7-a937-915057242eca", // The ID of this integration.
+				  region: "au-syd", // The region your integration is hosted in.
+				  serviceInstanceID: "68106b4c-302a-41d4-bdf5-00458ba09a25", // The ID of your service instance.
+				  onLoad: function(instance) { instance.render(); }
+				};
+				setTimeout(function(){
+				  const t=document.createElement('script');
+				  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+				  document.head.appendChild(t);
+				});
+			  </script>
+	</body>
+</html>
